@@ -1,4 +1,3 @@
-// useGameMessage.js
 import { useState, useCallback } from "react";
 
 export function useGameMessage() {

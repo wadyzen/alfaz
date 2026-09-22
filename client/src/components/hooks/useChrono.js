@@ -1,4 +1,3 @@
-// useChrono.js
 import { useState, useEffect, useRef, useCallback } from "react";
 
 export function useChrono(timeLimit = 120) {
@@ -8,10 +7,8 @@ export function useChrono(timeLimit = 120) {
   const [hasWon, setHasWon] = useState(false);
   const intervalRef = useRef(null);
 
-  // Track if this is the first start after reset
   const isFirstStartRef = useRef(true);
 
-  // Format time as MM:SS
   const formatTime = useCallback((seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -31,7 +28,6 @@ export function useChrono(timeLimit = 120) {
     // Don't start if game is won
     if (hasWon) return;
 
-    // Clear any existing interval
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
@@ -61,7 +57,7 @@ export function useChrono(timeLimit = 120) {
     }
   }, []);
 
-  // Reset to full time (for new game)
+  // Reset to full time for new game
   const resetChrono = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -83,10 +79,8 @@ export function useChrono(timeLimit = 120) {
     setIsTimeUp(false);
     setIsRunning(false);
 
-    // Don't auto-start - let Game.jsx handle starting
   }, [timeLimit]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (intervalRef.current) {
@@ -109,7 +103,7 @@ export function useChrono(timeLimit = 120) {
     startChrono,
     pauseChrono,
     resetChrono,
-    resetForNewGuess, // Added this new function
+    resetForNewGuess, 
     stopOnWin,
     getTimePercentage,
   };

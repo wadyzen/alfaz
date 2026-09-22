@@ -1,4 +1,3 @@
-// useGameLogic.js
 import { useState, useEffect, useCallback } from "react";
 
 export function useGameLogic() {

@@ -1,11 +1,8 @@
-// ResumeScreen.jsx
-import React from "react";
-
 function ResumeScreen({ onResume, onNewGame, hasSavedGame }) {
   return (
     <div className="resume-screen-overlay">
       <div className="resume-screen-content">
-        <h2>Welcome to Kelmat</h2>
+        <h2>Welcome to ALFAZ !</h2>
 
         {hasSavedGame && (
           <div className="resume-options">

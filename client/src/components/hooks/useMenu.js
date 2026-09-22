@@ -1,4 +1,3 @@
-// useMenu.js
 import { useState, useCallback } from "react";
 
 export function useMenu(initialState = false) {

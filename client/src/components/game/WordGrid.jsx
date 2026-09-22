@@ -1,4 +1,3 @@
-// WordGrid.jsx
 import { memo } from "react";
 
 const WordGrid = memo(function WordGrid({

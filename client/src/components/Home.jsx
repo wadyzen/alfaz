@@ -11,16 +11,15 @@ function Home() {
   const [useTimer, setUseTimer] = useState(false);
   const [timerDuration, setTimerDuration] = useState(120);
   const [language, setLanguage] = useState("english");
-  const [letterLength, setLetterLength] = useState(5); // Default to 5 letters
+  const [letterLength, setLetterLength] = useState(5); 
   const [isCreatingGame, setIsCreatingGame] = useState(false);
   const [isJoiningGame, setIsJoiningGame] = useState(false);
   const [gameCode, setGameCode] = useState("");
   const [error, setError] = useState("");
-  const [gameMode, setGameMode] = useState(""); // "", "create", or "join"
+  const [gameMode, setGameMode] = useState(""); 
   const sliderTrackRef = useRef(null);
 
   useEffect(() => {
-    // Update slider position on timer duration change
     if (sliderTrackRef.current) {
       sliderTrackRef.current.style.setProperty(
         "--time-percentage",

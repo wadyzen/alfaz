@@ -1,8 +1,6 @@
-// SideMenu.jsx
 import { useEffect } from "react";
 
 function SideMenu({ isOpen, onClose, children }) {
-  // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && isOpen) {
@@ -12,7 +10,7 @@ function SideMenu({ isOpen, onClose, children }) {
 
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden"; // Prevent scrolling
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
@@ -21,7 +19,6 @@ function SideMenu({ isOpen, onClose, children }) {
     };
   }, [isOpen, onClose]);
 
-  // Handle overlay click
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -30,13 +27,11 @@ function SideMenu({ isOpen, onClose, children }) {
 
   return (
     <>
-      {/* Overlay */}
       <div
         className={`menu-overlay ${isOpen ? "open" : ""}`}
         onClick={handleOverlayClick}
       />
 
-      {/* Side Menu */}
       <aside className={`side-menu ${isOpen ? "open" : ""}`}>
         <div className="menu-header">
           <h2 className="menu-title">Menu</h2>

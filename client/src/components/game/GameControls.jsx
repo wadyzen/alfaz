@@ -1,4 +1,3 @@
-// GameControls.jsx
 function GameControls({ gameStatus, isAnimating, onReset }) {
   const showPlayAgain = gameStatus !== "playing";
 

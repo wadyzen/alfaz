@@ -1,4 +1,3 @@
-// GameMessage.jsx
 function GameMessage({ message, gameStatus, onClose }) {
   if (!message) return null;
 

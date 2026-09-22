@@ -1,4 +1,3 @@
-// ChronoDisplay.jsx
 import chronoIcon from "../../assets/img/chrono.svg";
 
 function ChronoDisplay({
